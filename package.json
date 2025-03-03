@@ -11,3 +11,14 @@
     "pg": "^8.11.3"
   }
 }
+  "name": "secure-app",
+  "dependencies": {
+    "express": "4.21.2",
+    "body-parser": "1.20.3",
+    "path-to-regexp": "1.9.0",
+    "send": "0.19.0",
+    "serve-static": "1.16.2",
+    "cookie": "0.7.0"
+  }
+}
+

@@ -28,16 +28,21 @@ app.get('/', async (req, res) => {
   try {
     // Record visit
     await pool.query('INSERT INTO visits(date) VALUES(CURRENT_TIMESTAMP)');
-    
+
     // Get visit count
     const result = await pool.query('SELECT COUNT(*) FROM visits');
     const visitCount = result.rows[0].count;
-    
     res.send(`<h1>Docker App</h1><p>This page has been visited ${visitCount} times.</p>`);
   } catch (err) {
     console.error('Database error:', err);
     res.status(500).send('Database error');
   }
+
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => {
+  res.send('Hello Docker Security!');
 });
 
 app.listen(port, () => {
